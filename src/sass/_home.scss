@@ -1,5 +1,96 @@
 @import '_mixin';
 @import '_variables';
 
-#Home{
-}
+#home, #register{
+    height: 100vh;
+    width: 100%;
+    @include flexbox();
+
+    h1{
+        font-size: 3.6rem;
+        margin: 2rem 0;
+        font-weight: 600;
+    }
+
+    form{
+        @include flexbox(column, space-evenly, center);
+        width: 90%;
+        max-width: 450px;
+        height: 100vh;
+        max-height: 550px;
+        padding: 2rem;
+        background: #292a2e;
+        border-radius: 1rem;
+        transition: all 0.2s;
+
+        &:hover{
+            box-shadow: 0 0 1rem rgba(143,61,217,1);
+        }
+
+        .link{
+            text-decoration: none;
+            color: $font-color;
+            font-size: 1.6rem;
+            margin: 2rem 0;
+            padding: 3px;
+            border-bottom: 1px solid rgb(193, 153, 228);
+            transition: color 0.5s;
+
+            &:hover{
+                color: rgba(143,61,217,1);
+                border-bottom: 1px solid rgba(143,61,217,1);
+            }
+        }
+
+        span{
+            width: 100%;
+            max-width: 300px;
+            @include flexbox(column, start, center);
+
+            label{
+                width: min-content;
+                align-self: start;
+                margin-bottom: 4px;
+                font-size: 1.6rem;
+            }
+        }
+
+        .switch{
+            margin-bottom: -8%;
+        }
+
+        input{
+            width: 100%;
+            height: 40px;
+            font-size: 1.3rem;
+            padding-left: 1rem;
+            border: none;
+            border-radius: 1rem;    
+            box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+
+            &::placeholder{
+                font-size: 1.4rem;
+            }
+        }
+    
+        button{
+            width: 100%;
+            max-width: 300px;
+            height: 40px;
+            font-size: 1.6rem;
+            border: none;
+            border-radius: 1rem;
+            margin: 2rem 0;
+            box-shadow: 0 0 1rem $secondary-color;
+            background: $tertiary-color top;
+            color: $font-color;
+            transition: all 0.5s;
+    
+            &:hover{
+                letter-spacing: 0.2rem;
+                text-decoration: underline;
+            }
+        }
+    }
+
+} 
