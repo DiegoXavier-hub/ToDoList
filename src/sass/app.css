@@ -89,13 +89,30 @@
   transition: all 0.5s;
 }
 #home form button:hover, #register form button:hover {
-  letter-spacing: 0.2rem;
+  letter-spacing: 0.1rem;
   text-decoration: underline;
 }
 
-#admin textarea {
+#admin {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5vh;
+}
+#admin h1 {
+  margin-bottom: 5vh;
+}
+#admin form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  max-width: 600px;
+}
+#admin form textarea {
   width: 100%;
-  max-width: 300px;
   height: 100px;
   font-size: 1.6rem;
   padding: 1rem;
@@ -104,6 +121,113 @@
   margin: 2rem 0;
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
   resize: none;
+}
+#admin form button {
+  width: 100%;
+  max-width: 600px;
+  height: 40px;
+  font-size: 1.6rem;
+  border: none;
+  border-radius: 1rem;
+  margin-bottom: 2rem;
+  background: linear-gradient(180deg, rgb(143, 61, 217) 0%, rgb(105, 66, 165) 100%) top;
+  color: #d9d9d9;
+  transition: all 0.5s;
+}
+#admin form button:hover {
+  letter-spacing: 0.1rem;
+  text-decoration: underline;
+}
+#admin form .btn-update-tarefa {
+  background: linear-gradient(180deg, rgb(255, 158, 0) 0%, rgb(252, 74, 26) 100%) top;
+}
+#admin article {
+  width: 90%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  background-color: #101010;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  padding: 14px 8px;
+}
+#admin article div.tarefa {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: start;
+  width: 100%;
+  min-height: 10vh;
+}
+#admin article div.tarefa p {
+  display: block;
+  width: 100%;
+  min-height: 10vh;
+  margin-right: 15px;
+  border-right: 1px solid #414141;
+}
+#admin article div.tarefa div.btn-ud-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  margin-top: 10px;
+  width: -moz-min-content;
+  width: min-content;
+  min-height: 10vh;
+  height: 100%;
+  align-self: flex-end;
+  align-self: self-end;
+}
+#admin article div.tarefa div.btn-ud-container button {
+  width: 40px;
+  height: 40px;
+  color: rgba(255, 255, 255, 0);
+  border-radius: 100px;
+  border: none;
+  background-color: #ffffff;
+  transition: all 0.3s;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+#admin article div.tarefa div.btn-ud-container button.btn-update {
+  background: url("../images/atualizar.png") no-repeat center center/65%;
+  width: 45px;
+  height: 45px;
+  margin-bottom: 10px;
+  margin-top: -10px;
+}
+#admin article div.tarefa div.btn-ud-container button.btn-update:hover {
+  background-size: 75% !important;
+}
+#admin article div.tarefa div.btn-ud-container button.btn-complete {
+  background: url("../images/concluido.png") no-repeat center center/120%;
+}
+#admin article div.tarefa div.btn-ud-container button.btn-complete:hover {
+  background-size: 150% !important;
+}
+#admin button.btn-logout {
+  position: absolute;
+  top: -10px;
+  right: 10px;
+  width: 50px;
+  height: 50px;
+  font-size: 1.6rem;
+  border: none;
+  border-radius: 1rem;
+  margin: 2rem 0;
+  box-shadow: 0 0 1rem linear-gradient(180deg, rgb(255, 158, 0) 0%, rgb(252, 74, 26) 100%);
+  background: linear-gradient(180deg, rgb(255, 158, 0) 0%, rgb(252, 74, 26) 100%) top;
+  color: #d9d9d9;
+  transition: all 0.5s;
+}
+#admin button.btn-logout:hover {
+  letter-spacing: 0.1rem;
+  text-decoration: underline;
 }
 
 html {
@@ -116,21 +240,32 @@ html * {
 }
 html body {
   font-family: "Montserrat", "sans-serif";
-  overflow: hidden;
   background: #1c1d20;
   color: #d9d9d9;
   width: 100%;
   font-size: 1.6rem;
 }
-html body ::-moz-selection {
+html body::-webkit-scrollbar-thumb:hover {
+  background: rgb(140, 91, 214);
+}
+html body::-moz-selection {
   background: rgb(105, 66, 165);
   color: #fff;
 }
-html body ::selection {
+html body::selection {
   background: rgb(105, 66, 165);
   color: #fff;
 }
 html body button {
   cursor: pointer;
   transition: all 0.3s;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+html body .loader {
+  height: 100vh;
+  width: 100vh;
+  overflow: hidden;
+  background-color: #1c1d20;
 }/*# sourceMappingURL=app.css.map */

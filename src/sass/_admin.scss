@@ -1,14 +1,139 @@
+@import '_mixin';
+@import '_variables';
+
 #admin{
-    textarea{
-        width: 100%;
-        max-width: 300px;
-        height: 100px;
-        font-size: 1.6rem;
-        padding: 1rem;
-        border: none;
-        border-radius: 1rem;    
-        margin: 2rem 0;
-        box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
-        resize: none;
+
+    @include flexbox();
+    margin-top: 5vh;
+
+    h1{
+        margin-bottom: 5vh;
     }
+
+    form{
+        @include flexbox();
+        width: 90%;
+        max-width: 600px;
+
+        textarea{
+            width: 100%;
+            height: 100px;
+            font-size: 1.6rem;
+            padding: 1rem;
+            border: none;
+            border-radius: 1rem;    
+            margin: 2rem 0;
+            box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+            resize: none;
+        }
+
+        button{
+            width: 100%;
+            max-width: 600px;
+            height: 40px;
+            font-size: 1.6rem;
+            border: none;
+            border-radius: 1rem;
+            margin-bottom: 2rem;
+            background: $tertiary-color top;
+            color: $font-color;
+            transition: all 0.5s;
+    
+            &:hover{
+                letter-spacing: 0.1rem;
+                text-decoration: underline;
+            }
+        }
+
+        .btn-update-tarefa{
+            background: $secondary-color top;
+        }
+    }
+
+    article{
+        width: 90%;
+        max-width: 600px;
+        @include flexbox(column, center, start);
+        background-color: #101010;
+        border-radius: 5px;
+        margin-bottom: 5px;
+        padding: 14px 8px;
+
+        div.tarefa{
+            @include flexbox(row, space-between, start);
+            width: 100%;
+            min-height: 10vh;
+            
+            p{
+                display: block;
+                width: 100%;
+                min-height: 10vh;
+                margin-right: 15px;
+                border-right: 1px solid #414141;
+            }
+
+            div.btn-ud-container{
+                @include flexbox(column, space-between, start);
+                margin-top: 10px;
+                width: min-content;
+                min-height: 10vh;
+                height: 100%;
+                align-self: flex-end;
+                align-self: self-end;
+                
+                button{
+                    width: 40px;
+                    height: 40px;
+                    color: #ffffff00;
+                    border-radius: 100px;
+                    border: none;
+                    background-color: #ffffff;
+                    transition: all 0.3s;
+                    cursor: pointer;
+                    user-select: none;
+
+                }
+                
+                button.btn-update{
+                    background: url('../images/atualizar.png') no-repeat center center / 65%;
+                    width: 45px;
+                    height: 45px;
+                    margin-bottom: 10px;
+                    margin-top: -10px;
+                    &:hover{
+                        background-size: 75% !important;
+                    }
+                }
+                
+                button.btn-complete{
+                    background: url('../images/concluido.png') no-repeat center center / 120%;
+                    &:hover{
+                        background-size: 150% !important;
+                    }
+                }
+            }
+        }
+    }
+
+    button.btn-logout{
+        position: absolute;
+        top: -10px;
+        right: 10px;
+        width: 50px;
+        height: 50px;
+        font-size: 1.6rem;
+        border: none;
+        border-radius: 1rem;
+        margin: 2rem 0;
+        box-shadow: 0 0 1rem $secondary-color;
+        background: $secondary-color top;
+        color: $font-color;
+        transition: all 0.5s;
+
+        &:hover{
+            letter-spacing: 0.1rem;
+            text-decoration: underline;
+        }
+    }
+
 }

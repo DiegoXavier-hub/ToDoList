@@ -36,7 +36,6 @@ export default function Home(){
         
     }
 
-//Se não estiver logado, redireciona para a página de login
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (user) => {
             if (user) {
@@ -53,7 +52,7 @@ export default function Home(){
 
         <h1>To-Do List</h1>
 
-            <form className='form' onSubmit={handleLogin}>
+            <form className='form' onSubmit={handleLogin} name='loginForm' id='loginForm'>
 
                 <span>Gerencie sua agenda de forma fácil</span>
 

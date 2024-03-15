@@ -65,14 +65,14 @@ export default function Register(){
             });
     
             return () => unsubscribe();
-    },[]);
+    }, []);
 
     return(
         <main id="register">
 
         <h1>Cadastre-se</h1>
 
-            <form className='form' onSubmit={handleRegister}>
+            <form className='form' onSubmit={handleRegister} name='registerForm' id='registerForm'>
 
                 <span>Vamos criar sua conta, tão rapido quanto o Flash</span>
 

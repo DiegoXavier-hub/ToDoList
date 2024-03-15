@@ -9,7 +9,6 @@ function RoutesApp() {
         <Routes>
             <Route path="/" element={ <Home/> }/>
             <Route path="/register" element={ <Register/> }/>
-
             <Route path='/admin' element={ <Private><Admin/></Private> }/>
         </Routes>
     )

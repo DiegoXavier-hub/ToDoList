@@ -17,13 +17,15 @@ html{
     
     body{
         font-family: $font-family;
-        overflow: hidden;
         background: $primary-color;
         color: $font-color;
         width: 100%;
         font-size: 1.6rem;
-        
-        ::selection {
+
+        &::-webkit-scrollbar-thumb:hover{
+            background: rgb(140, 91, 214);
+        }
+        &::selection {
             background: rgba(105,66,165,1);
             color: #fff;
         }
@@ -31,7 +33,14 @@ html{
         button{
             cursor: pointer;
             transition: all 0.3s;
+            user-select: none;
         }
 
+        .loader{
+            height: 100vh;
+            width: 100vh;
+            overflow: hidden;
+            background-color: $primary-color;
+        }
     }
 }

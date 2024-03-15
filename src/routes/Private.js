@@ -35,13 +35,15 @@ export default function Private({children}){
 
     if(loading){
         return(
-            <span class="loader"></span>
+            <span className="loader"></span>
         )
     }
 
     if(!signed){
         navigate('/', { replace: true })
+        return
+    } else {
+        return children
     }
     
-    return children
 }
