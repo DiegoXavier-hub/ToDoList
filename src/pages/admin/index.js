@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, cloneElement } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { signOut } from 'firebase/auth'
 import { auth, db } from '../../firebaseConnection'
 import {
@@ -121,7 +121,7 @@ export default function Admin() {
                             userUid: doc.data().userUid
                         })
                     })
-
+                    onsub()
                     setTarefas(lista)
                     
                 })
